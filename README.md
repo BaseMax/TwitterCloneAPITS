@@ -58,6 +58,30 @@ Access the application in your browser at http://localhost:3000.
 
 Use the provided API endpoints to interact with the Twitter Clone, or explore the application's user interface.
 
+## API Endpoints
+
+Here's an example of a list of API routes that could be included in a Twitter clone project:
+
+- `POST /api/auth/register`: Register a new user account.
+- `POST /api/auth/login`: Log in an existing user.
+- `GET /api/auth/logout`: Log out the currently authenticated user.
+- `GET /api/users`: Get a list of all users.
+- `GET /api/users/:id`: Get the details of a specific user by ID.
+- `PUT /api/users/:id`: Update the profile information of a specific user by ID.
+- `GET /api/tweets`: Get a list of all tweets.
+- `GET /api/tweets/:id`: Get the details of a specific tweet by ID.
+- `POST /api/tweets`: Create a new tweet.
+- `PUT /api/tweets/:id`: Update the content of a specific tweet by ID.
+- `DELETE /api/tweets/:id`: Delete a specific tweet by ID.
+- `POST /api/tweets/:id/like`: Like a specific tweet by ID.
+- `POST /api/tweets/:id/comments`: Add a comment to a specific tweet by ID.
+- `GET /api/tweets/:id/comments`: Get all comments for a specific tweet by ID.
+- `POST /api/follow/:id`: Follow a specific user by ID.
+- `POST /api/unfollow/:id`: Unfollow a specific user by ID.
+- `GET /api/feed`: Get the user's feed (tweets from followed users).
+- `GET /api/search/users`: Search for users based on a query.
+- `GET /api/search/tweets`: Search for tweets based on a query.
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
