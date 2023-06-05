@@ -23,7 +23,7 @@ The project is built with NestJS, a progressive Node.js framework for building e
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/twitter-clone..git
+   git clone https://github.com/BaseMax/TwitterCloneAPITS.git
    ```
 
 2. Navigate to the project directory:
