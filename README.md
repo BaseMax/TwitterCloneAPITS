@@ -28,31 +28,31 @@ The project is built with NestJS, a progressive Node.js framework for building e
 
 2. Navigate to the project directory:
 
-  ```bash
-  cd twitter-clone
-  ```
+   ```bash
+   cd twitter-clone
+   ```
 
 3. Install the dependencies:
 
-  ```bash
-  npm install
-  ```
+   ```bash
+   npm install
+   ```
 
 4. Create a `.env` file in the root directory and provide the necessary configuration variables. You can use the .env.example file as a template.
 
 5. Set up the database by running the migrations:
 
-  ```bash
-  npm run migration:run
-  ```
+   ```bash
+   npm run migration:run
+   ```
 
 ## Usage
 
 Start the application:
 
-```bash
-npm run start:dev
-```
+   ```bash
+   npm run start:dev
+   ```
 
 Access the application in your browser at http://localhost:3000.
 
