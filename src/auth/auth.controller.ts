@@ -29,7 +29,6 @@ export class AuthController {
     @Body() signUpDto: SignUpDto,
     @Res({ passthrough: true }) res: Response,
   ) {
-    console.log(signUpDto);
 
     const user = await this.authService.signUp(signUpDto);
 

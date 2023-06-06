@@ -11,6 +11,7 @@ import { TweetService } from './tweet.service';
 import { GetCurrentUserId } from 'src/common/decorators';
 import { CreateTweetDto } from './Dto/create-tweet.dto';
 import { AtGuard } from 'src/auth/guards/at.guard';
+import { UserService } from 'src/user/user.service';
 
 @Controller('tweet')
 export class TweetController {
@@ -21,14 +22,12 @@ export class TweetController {
     return await this.tweetService.findById(id);
   }
 
-  @Post('')
   @UseGuards(AtGuard)
+  @Post('')
   async tweet(
     @GetCurrentUserId() userId: number,
     @Body() createTweetDto: CreateTweetDto,
   ) {
-    console.log(userId);
-
     return await this.tweetService.create(userId, createTweetDto);
   }
 }

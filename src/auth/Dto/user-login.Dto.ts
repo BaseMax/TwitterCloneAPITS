@@ -23,5 +23,3 @@ export class UserLoginDto {
   @MaxLength(50, { message: clientMessages.auth.validation.maxPassword })
   password: string;
 }
-// sendCOde email
-// siginup  email otp name password confirm password

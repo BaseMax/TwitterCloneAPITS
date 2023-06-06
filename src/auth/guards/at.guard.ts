@@ -4,30 +4,33 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import { Reflector } from '@nestjs/core';
+import { JwtService } from '@nestjs/jwt';
 import { AuthGuard } from '@nestjs/passport';
 import clientMessages from 'src/common/translation/fa';
 
 @Injectable()
-export class AtGuard extends AuthGuard('jwt') {
-  constructor(private reflector: Reflector) {
-    super();
-  }
-
+export class AtGuard {
+  constructor(private readonly jwtService: JwtService) {}
   canActivate(context: ExecutionContext) {
-    const isPublic = this.reflector.getAllAndOverride('isPublic', [
-      context.getHandler(),
-      context.getClass(),
-    ]);
+    const request = context.switchToHttp().getRequest();
+    const token = request.headers['token'];
+    console.log(token);
 
-    if (isPublic) return true;
+    if (!token) {
+      throw new UnauthorizedException();
+    }
 
-    return super.canActivate(context);
+    try {
+      const payload = this.jwtService.verify(token);
+      request.user = payload;
+    } catch {
+      throw new UnauthorizedException();
+    }
+    return true;
   }
 
   handleRequest(err, user, info: Error) {
     if (err || info) throw new HttpException(clientMessages.auth.login, 498);
-
 
     return user;
   }

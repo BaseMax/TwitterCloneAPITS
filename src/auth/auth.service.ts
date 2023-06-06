@@ -31,10 +31,12 @@ export class AuthService {
       throw new BadRequestException(clientMessages.auth.invalidCredentials);
     }
 
+
     const isPasswordValid = await Hash.compare(
       userLogInDto.password,
       user.password,
     );
+
     if (!isPasswordValid) {
       throw new BadRequestException(clientMessages.auth.invalidCredentials);
     }
