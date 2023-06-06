@@ -26,4 +26,8 @@ export class TweetService {
   ): Promise<TweetInit> {
     return await this.tweetRepository.create(userId, createTweetDto);
   }
+
+  async getAll() {
+    return await this.tweetRepository.findMany();
+  }
 }

@@ -23,6 +23,20 @@ export class TweetRepository {
     });
   }
 
+  findMany(): Promise<TweetInit[]> {
+    return this.prisma.tweet.findMany({
+      select: {
+        id: true,
+        content: true,
+        user: {
+          select: {
+            username: true,
+            id: true,
+          },
+        },
+      },
+    });
+  }
   create(id, createTweetDto: CreateTweetDto): Promise<TweetInit> {
     return this.prisma.tweet.create({
       data: {

@@ -30,4 +30,9 @@ export class TweetController {
   ) {
     return await this.tweetService.create(userId, createTweetDto);
   }
+
+  @Get()
+  async getAll() {
+    return await this.tweetService.getAll();
+  }
 }
