@@ -4,19 +4,15 @@ This is a Twitter clone project built with NestJS and TypeScript.
 
 ## Description
 
-The Twitter Clone is a web application that aims to replicate some of the core features and functionality of the popular social media platform, Twitter. It provides a platform for users to post tweets, follow other users, like and comment on tweets, and more.
+The Twitter Clone is a web application that aims to replicate some of the core features and functionality of the popular social media platform, Twitter. It provides a platform for users to post tweets, users, and more.
 
 The project is built with NestJS, a progressive Node.js framework for building efficient, scalable, and maintainable server-side applications. NestJS leverages TypeScript, providing strong typing and enhanced tooling for better developer experience.
 
 ## Features
 
 - User registration and authentication
-- User profiles with bio and profile picture
-- Posting tweets with text and media attachments
-- Following and unfollowing other users
-- Timeline and feed for viewing tweets from followed users
-- Like and comment on tweets
-- Search functionality for finding users and tweets
+- User profiles with bio
+- Posting tweets with text
 
 ## Installation
 
@@ -50,9 +46,9 @@ The project is built with NestJS, a progressive Node.js framework for building e
 
 Start the application:
 
-   ```bash
-   npm run start:dev
-   ```
+```bash
+npm run start:dev
+```
 
 Access the application in your browser at http://localhost:3000.
 
@@ -72,15 +68,6 @@ Here's an example of a list of API routes that could be included in a Twitter cl
 - `GET /api/tweets/:id`: Get the details of a specific tweet by ID.
 - `POST /api/tweets`: Create a new tweet.
 - `PUT /api/tweets/:id`: Update the content of a specific tweet by ID.
-- `DELETE /api/tweets/:id`: Delete a specific tweet by ID.
-- `POST /api/tweets/:id/like`: Like a specific tweet by ID.
-- `POST /api/tweets/:id/comments`: Add a comment to a specific tweet by ID.
-- `GET /api/tweets/:id/comments`: Get all comments for a specific tweet by ID.
-- `POST /api/follow/:id`: Follow a specific user by ID.
-- `POST /api/unfollow/:id`: Unfollow a specific user by ID.
-- `GET /api/feed`: Get the user's feed (tweets from followed users).
-- `GET /api/search/users`: Search for users based on a query.
-- `GET /api/search/tweets`: Search for tweets based on a query.
 
 ## API Examples
 
@@ -258,186 +245,7 @@ Response:
 }
 ```
 
-### `PUT /api/tweets/:id`: Update the content of a specific tweet by ID.
 
-Request Body:
-
-```json
-{
-  "content": "Updated tweet content"
-}
-```
-
-Response:
-
-```json
-{
-  "id": "1",
-  "author": {
-    "id": "1",
-    "username": "john_doe"
-  },
-  "content": "Updated tweet content"
-}
-```
-
-### `DELETE /api/tweets/:id`: Delete a specific tweet by ID.
-
-Response:
-
-```json
-{
-  "message": "Tweet deleted successfully"
-}
-```
-
-### `POST /api/tweets/:id/like`: Like a specific tweet by ID.
-
-Response:
-
-```json
-{
-  "message": "Tweet liked successfully"
-}
-```
-
-### `POST /api/tweets/:id/comments`: Add a comment to a specific tweet by ID.
-
-Request Body:
-
-```json
-{
-  "content": "Great tweet!"
-}
-```
-
-Response:
-
-```json
-{
-  "id": "1",
-  "tweetId": "1",
-  "author": {
-    "id": "2",
-    "username": "jane_smith"
-  },
-  "content": "Great tweet!"
-}
-```
-
-### `GET /api/tweets/:id/comments`: Get all comments for a specific tweet by ID.
-
-Response:
-
-```json
-[
-  {
-    "id": "1",
-    "tweetId": "1",
-    "author": {
-      "id": "2",
-      "username": "jane_smith"
-    },
-    "content": "Great tweet!"
-  },
-  {
-    "id": "2",
-    "tweetId": "1",
-    "author": {
-      "id": "1",
-      "username": "john_doe"
-    },
-    "content": "Thanks!"
-  }
-]
-```
-
-### `POST /api/follow/:id`: Follow a specific user by ID.
-
-Response:
-
-```json
-{
-  "message": "You are now following john_doe"
-}
-```
-
-### `POST /api/unfollow/:id`: Unfollow a specific user by ID.
-
-Response:
-
-```json
-{
-  "message": "You have unfollowed john_doe"
-}
-```
-
-### `GET /api/feed`: Get the user's feed (tweets from followed users).
-
-Response:
-
-```json
-[
-  {
-    "id": "2",
-    "author": {
-      "id": "2",
-      "username": "jane_smith"
-    },
-    "content": "Tweeting away!"
-  },
-  {
-    "id": "1",
-    "author": {
-      "id": "1",
-      "username": "john_doe"
-    },
-    "content": "Hello, Twitter!"
-  }
-]
-```
-
-### `GET /api/search/users`: Search for users based on a query.
-
-Query Parameters:
-
-```
-q=john
-```
-
-Response:
-
-```json
-[
-  {
-    "id": "1",
-    "username": "john_doe"
-  }
-]
-```
-
-### `GET /api/search/tweets`: Search for tweets based on a query.
-
-Query Parameters:
-
-```
-q=twitter
-```
-
-Response:
-
-```json
-[
-  {
-    "id": "1",
-    "author": {
-      "id": "1",
-      "username": "john_doe"
-    },
-    "content": "Hello, Twitter!"
-  }
-]
-```
 
 ## Contributing
 
