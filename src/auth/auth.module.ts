@@ -8,6 +8,7 @@ import { JwtStrategy } from './startegies/atStartegy';
 import { UserModule } from 'src/user/user.module';
 import { UserService } from 'src/user/user.service';
 import { PrismaModule } from 'src/prisma/prisma.module';
+
 @Module({
   imports: [
     JwtModule.register({ secret: process.env.SECRET_KEY }),
