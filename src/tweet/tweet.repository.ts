@@ -3,6 +3,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { TweetInit } from './types/tweet-type';
 import { Tweet } from '@prisma/client';
 import { CreateTweetDto } from './Dto/create-tweet.dto';
+
 @Injectable()
 export class TweetRepository {
   constructor(private readonly prisma: PrismaService) {}
