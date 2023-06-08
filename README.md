@@ -25,7 +25,7 @@ The project is built with NestJS, a progressive Node.js framework for building e
 2. Navigate to the project directory:
 
    ```bash
-   cd twitter-clone
+   cd TwitterCloneAPITS
    ```
 
 3. Install the dependencies:
