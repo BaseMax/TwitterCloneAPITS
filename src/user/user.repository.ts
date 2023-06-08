@@ -4,6 +4,7 @@ import { SignUpDto } from 'src/auth/Dto/user-signUp.dto';
 import { User } from '@prisma/client';
 import { UserInit } from 'src/auth/types/user-init.type';
 import { UpdateDto } from './Dto/update-user.dto';
+
 @Injectable()
 export class UserRepository {
   constructor(private readonly prisma: PrismaService) {}
